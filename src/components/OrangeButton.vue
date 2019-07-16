@@ -16,7 +16,7 @@
 
 <style>
 	.orange_btn{
-		background-color: #ff5215;
+		background-color:@mainOrange;
 		color: white;
 		font-family: Muller;
 		font-weight: bold;
