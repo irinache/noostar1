@@ -3,7 +3,7 @@
     <div class="c-header__top">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-md-4 c-header__logo">
+                <div class="col-md-4 logo">
                     <img src="../assets/images/logo.png" alt="logo"/>
                 </div>
                 <div class="col-md-auto">
@@ -91,11 +91,12 @@
         font-size: 13px;   
         background-color: white;
     }
-    &__logo{
-        margin-top: 20px;
-        margin-bottom: 20px;
-        text-align: left;
-    }
+
+}
+.logo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
 }
 
 .email{
@@ -116,7 +117,6 @@
             text-align: left;
         }
     }
-
 }
 
 @media (max-width: 770px) {
@@ -136,13 +136,7 @@
             text-align: left;             
             margin-right: 0px;
         }
-        &__logo{
-            width: 100%;
-            text-align: center;
-            padding: 20;
-            margin-right: auto;
-            margin-left: auto;
-        }
+        
     }  
     .btn_container{       
         margin-bottom: 10px;    
@@ -153,29 +147,36 @@
         margin-bottom: 20px;
         margin-top: 10px; 
     }
+    .logo{
+        width: 100%;
+        text-align: center;
+        padding: 20;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 @media (max-width: 482px) {
     .c-header {
-        &__contact {  
+        &__contact { 
            
             text-align: center;             
             margin-right: 0px;
             width: 90vw;
         }
-        &__logo{
-            width: 100%;
-            text-align: center;
-            padding: 20;
-            margin-right: auto;
-            margin-left: auto;
-        }
+
     }  
     .btn_container{
         width: 100%;        
         margin-bottom: 30px;    
     }
-    .dropdown-lang{
-        
+    .logo{
+        width: 100%;
+        text-align: center;
+        padding: 20;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .dropdown-lang{        
         margin-right: auto;
         margin-left: auto;
         margin-bottom: 20px;

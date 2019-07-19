@@ -1,54 +1,52 @@
 <template>
-	<div>
-		<div class="container">
+	<div class="main-slider">	
+		<div class="main-slider__wrapper container-fluid">
 			<div class="row">
-				<div id="right" class="arr" v-on:click = "right"></div>
+				<div id="main-slider__right" class="main-slider__right main-slider__arr" v-on:click = "right"></div>
 				
-				<div id="left" class="arr" v-on:click = "left"></div>
-			</div>			
-		</div>		
-		<div id="slide" class="slider">
-			<div class="slides">
-				<div class="slide-single">				
-				<div class="text">
+				<div id="main-slider__left" class="main-slider__left main-slider__arr" v-on:click = "left"></div>
+			</div>	
+			<div class="main-slider__slides">
+				<div class="main-slider__slide-single">				
+				<div class="main-slider__text">
 					<h1>
 						Учебный центр «Noostar» 1
 					</h1>
-					<p class="welcome_text">
-						Учебный центр «Noostar»<br>
-						Обучающие программы по программированию<br>
-						и интернет-технологиям для людей любого<br>
-						возраста и с любой базой знаний<br>						
+					<p class="main-slider__welcome-text">
+						Учебный центр «Noostar»
+						Обучающие программы по программированию
+						и интернет-технологиям для людей любого
+						возраста и с любой базой знаний					
 					</p>
-					<a href="#" class="orange_btn">Стать студентом</a>
+					<a href="#" class="orange_btn btn-animation">Стать студентом</a>
 				</div>
 			</div>
-			<div class="slide-single">				
-				<div class="text">
+			<div class="main-slider__slide-single">				
+				<div class="main-slider__text">
 					<h1>
 						Учебный центр «Noostar» 2
 					</h1>
-					<p class="welcome_text">
-						Учебный центр «Noostar»<br>
-						Обучающие программы по программированию<br>
-						и интернет-технологиям для людей любого<br>
-						возраста и с любой базой знаний<br>						
+					<p class="main-slider__welcome-text">
+						Учебный центр «Noostar»
+						Обучающие программы по программированию
+						и интернет-технологиям для людей любого
+						возраста и с любой базой знаний					
 					</p>
-					<a href="#" class="orange_btn">Стать студентом</a>
+					<a href="#" class="orange_btn btn-animation">Стать студентом</a>
 				</div>
 			</div>
-			<div class="slide-single">				
-				<div class="text">
+			<div class="main-slider__slide-single">				
+				<div class="main-slider__text">
 					<h1>
 						Учебный центр «Noostar» 3
 					</h1>
-					<p class="welcome_text">
-						Учебный центр «Noostar»<br>
-						Обучающие программы по программированию<br>
-						и интернет-технологиям для людей любого<br>
-						возраста и с любой базой знаний<br>						
+					<p class="main-slider__welcome-text">
+						Учебный центр «Noostar»
+						Обучающие программы по программированию
+						и интернет-технологиям для людей любого
+						возраста и с любой базой знаний					
 					</p>
-					<a href="#" class="orange_btn">Стать студентом</a>
+					<a href="#" class="orange_btn btn-animation">Стать студентом</a>
 				</div>
 			</div>			
 			</div>
@@ -78,162 +76,140 @@
 			getMax: function(){
 				return Math.abs(this.cards.offsetWidth - this.offset);
 			},
-			switchArrows: function(arr){
-				if (arr.classList.indexOf("active") != -1){
-					arr.classList.remove("active")
-
+			switchArrowState: function(id, arr){
+				let elem = document.getElementById(id);
+				if (arr === true){
+					elem.classList.add("unactive");
+					elem.classList.remove("active");					
+				}
+				else if (arr == false){
+					elem.classList.add("active");
+					elem.classList.remove("unactive");
 				}
 			},
 			right: function(){
 				if(!this.l_arr){
-					document.getElementById('left').classList.add("active");
-					document.getElementById('left').classList.remove("unactive");
+					this.switchArrowState('main-slider__left', this.l_arr);
 					this.l_arr = true;		
 				}
 				if(Math.abs(this.getLeft()) + this.offset < this.getMax())
 					this.cards.style.left = this.getLeft() - this.offset + 'px';			
 				else if (Math.abs(this.getLeft()) + this.offset == this.getMax()){
 					this.cards.style.left = this.getLeft() - this.offset + 'px';
+					
+					this.switchArrowState('main-slider__right', this.r_arr);
 					this.r_arr = false;	
-					document.getElementById('right').classList.add("unactive");
-					document.getElementById('right').classList.remove("active");
-				}
-				else{
-					this.r_arr = false;	
-					document.getElementById('right').classList.add("unactive");
-					document.getElementById('right').classList.remove("active");
-				}				
+				}								
 			},
 			left: function(){
 				if(!this.r_arr){
-					document.getElementById('right').classList.add("active");
-					document.getElementById('right').classList.remove("unactive");
+					this.switchArrowState('main-slider__right', this.r_arr);		
 					this.r_arr = true;		
 				}
 				if(this.getLeft() + this.offset < 0 )
 					this.cards.style.left = this.getLeft() + this.offset + 'px';
 				else if (this.getLeft() + this.offset == 0){
 					this.cards.style.left = this.getLeft() + this.offset + 'px';
+					this.switchArrowState('main-slider__left', this.l_arr);
 					this.l_arr = false;	
-					document.getElementById('left').classList.add("unactive");
-					document.getElementById('left').classList.remove("active");
 				}
-				else{
-					this.l_arr = false;	
-					document.getElementById('left').classList.add("unactive");
-					document.getElementById('left').classList.remove("active");
-				}
-			},		
-			handleResize: function(event){				
-				console.log(" resize");
-				let slides = document.querySelectorAll('.slide-single');
-
-				this.cards = document.querySelector('.slides');
-			
-				this.card_width = document.querySelector('.slide-single').offsetWidth; 
-				console.log(this.card_width)
+			},	
+			reloadSlider: function() {
+				let slides = document.querySelectorAll('.main-slider__slide-single');
+				this.cards = document.querySelector('.main-slider__slides');
+				this.card_width = window.innerWidth; 
 				this.offset = this.card_width;
-			
-			
-				this.cards.style.width = slides.length*this.offset + 'px';
-
-				this.cards.style.left = 0;
-
+				this.cards.style.width = slides.length*this.offset + 'px';		
+				this.cards.style.left = 0;				
+				
+				document.getElementById('main-slider__left').classList.remove("active");
+				document.getElementById('main-slider__left').classList.add("unactive");
 				this.l_arr = false;	
-				document.getElementById('left').classList.remove("active");
-				document.getElementById('left').classList.add("unactive");
-
-				this.r_arr = true;	
-				document.getElementById('right').classList.remove("unactive");
-				document.getElementById('right').classList.add("active");
-			}			
+					
+				document.getElementById('main-slider__right').classList.remove("unactive");
+				document.getElementById('main-slider__right').classList.add("active");
+				this.r_arr = true;
+			},
+			handleResize: function(event){				
+				this.reloadSlider();
+			}					
 		},
 		mounted: function () {
-		    let slides = document.querySelectorAll('.slide-single');
-
-			this.cards = document.querySelector('.slides');
-			//console.log(this.cards)
-			this.card_width = document.querySelector('.slide-single').offsetWidth; 
-			this.offset = this.card_width;
-			
-			
-			this.cards.style.width = slides.length*this.offset + 'px';
-			
-
-			document.getElementById('left').classList.add("unactive");
-			document.getElementById('right').classList.add("active");
-
+		    this.reloadSlider();
 			this.$nextTick(function() {
 				window.addEventListener('resize', this.handleResize);
 			});
-			//console.log("pre resize");
-			//this.handleResize();
-		}
-	
-	}
 
+		}	
+	}
 </script>
 
-<style>	
-	.slider{
-		font-size: 0; 
-		overflow: hidden;
-		width: 100%;
-		margin: 0 auto;
-		display: inline-block;
-		vertical-align: middle;
-		position: relative;
-		height: 600px;		
-	}
-
-	.slides{
-		
-		position: absolute;	
-		transition: all ease 1s;
-		z-index: 10;
- 		text-align: left;
- 		top: 0;
- 		left: 0;
-	}
-	.slide-single {
-		width: 100vw;	
-		height: 600px;
-		transition: all ease 1s;
-		display: inline-block;
-		background: url('../assets/images/bg-header.jpg') no-repeat center top/cover
-	}
-	#right{		
-		background: url("../assets/images/arrow_right_inactive.png") no-repeat center;
-		right: 70px;
-	}
-	#left{		
-		background: url("../assets/images/arrow_left_inactive.png") no-repeat center;
-		left:  70px;
-	}
-	.arr{
-		position: absolute;
-		top: 350px;
-		width: 86px;
-		height: 86px;
-		z-index: 13;
-	}
-	.text{
-		margin: 180px 0 0 200px;
-		z-index: 10;
-		color: white;
-		text-align: left;	
-	}
+<style lang="less">	
+	.main-slider{
+		&__wrapper{
+			font-size: 0; 
+			overflow: hidden;
+			width: 100%;
+			margin: 0 auto;
+			display: inline-block;
+			vertical-align: middle;
+			position: relative;
+			height: 600px;
+		}				
+		&__arr {
+	        position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 86px;
+			height: 86px;
+			z-index: 13;        
+	    }
+	    &__left{
+			background: url("../assets/images/arrow_left_inactive.png") no-repeat center center/cover;
+			left:  70px;
+	    }
+	    &__right{
+	    	background: url("../assets/images/arrow_right_inactive.png") no-repeat center center/cover;
+			right: 70px;
+	    }
+	    &__slides{
+			position: absolute;	
+			transition: all ease 1s;
+			z-index: 10;
+	 		text-align: left;
+	 		top: 0;
+	 		left: 0;
+		}
+		&__slide-single {
+			width: 100vw;	
+			height: 600px;
+			transition: all ease 1s;
+			display: inline-block;
+			background: url('../assets/images/bg-header.jpg') no-repeat center top/cover
+		}
+		&__text{
+			margin: 180px 0 0 200px;
+			z-index: 10;
+			color: white;
+			text-align: left;			
+		}
+		&__welcome-text{
+			font-family: Muller;
+			font-size: 20px;
+			margin-top: 36px;
+			margin-bottom: 28px;
+			animation: text_appering 2s;
+			width: 40%;
+		}												
+	}		
+	
 	h1{
 		font-family: Muller;
 		font-weight: bold;
 		font-size: 44px;
+		animation: h1_appering 2s;
 	}
-	.welcome_text{
-		font-family: Muller;
-		font-size: 20px;
-		margin-top: 36px;
-		margin-bottom: 28px;
-	}
+	
 	.orange_btn{
 		background-color: #ff5215;
 		color: white;
@@ -242,15 +218,153 @@
 		font-size: 12px;
 		border-radius: 5px;
 		text-transform: uppercase;
-
-		padding: 12px 25px 10px 25px;
-		
+		padding: 12px 25px 10px 25px;		
 	}
+
+	.btn-animation{
+		animation: btn_appering 2s;
+	}
+
 	a:hover{
 		background-color: #ff652f;
 		color: white;
 		text-decoration: none;
+	}	
+
+	@media (max-width: 1000px) {  
+		.main-slider{	
+			&__arr {
+		        width: 66px;
+				height: 66px;	       
+		    }
+		    &__welcome-text{			
+				font-size: 16px;
+				text-align: center;	
+				margin-right: auto;
+				margin-left: auto;		
+			}
+			&__text{
+				margin: 180px auto 0 auto;	
+				text-align: center;		
+			}
+		} 		
+		h1{
+			font-size: 34px;
+			text-align: center;	
+		}
 	}
 
+	@media (max-width: 760px) {   
+		.main-slider{
+		    &__left{
+				left:  40px;
+		    }
+		    &__right{
+		    	right:  40px;
+		    }
+		}		
+	}
 
+	@media (max-width: 708px) {   
+		.main-slider{				
+		    &__welcome-text{			
+				width: 60%;			
+			}
+			&__text{
+				width: 60%;
+				margin-top: 140px;		
+			}
+		}			
+	}
+
+	@media (max-width: 500px) {   
+		.main-slider{
+		    &__left{
+				left:  10px;
+		    }
+		    &__right{
+		    	right:  10px;
+		    }
+		}			
+	}
+
+	@media (max-width: 425px) {   
+		.main-slider{				
+		    &__welcome-text{			
+				font-size: 14px;
+				text-align: center;	
+				margin-right: auto;
+				margin-left: auto;					
+			}
+			&__text{
+				width: 60%;
+				margin-top: 110px;	
+			}
+		}		
+		h1{
+			font-size: 28px;
+			text-align: center;	
+		}
+	}
+
+	@media (max-width: 380px) {   
+		.main-slider{	
+			&__arr {
+		        width: 46px;
+				height: 46px;	       
+		    }
+		} 	
+	}
+	
+	@media (max-width: 340px) {
+		.main-slider{				
+		    &__welcome-text{			
+				width: 70%;						
+			}
+			&__text{
+				margin-top: 70px;	
+			}
+		}
+	}
+
+	//animation --------------------
+
+	@keyframes h1_appering {
+		0%{
+			margin-top: -20px;
+			opacity: 0;
+		}
+		50%{
+			margin-top: 0px;
+			opacity: 1;
+		}
+	}
+
+	@keyframes text_appering {
+		0%{
+			margin-bottom: -20px;
+			opacity: 0;
+
+		}
+		50%{
+			margin-bottom: -20px;
+			opacity: 0;
+		}
+		90%{
+			margin-bottom: 0px;
+			opacity: 1;
+		}
+	}
+
+	@keyframes btn_appering {
+		0%{
+			opacity: 0;			
+		}
+		93%{
+			opacity: 0;			
+		}
+		100%{					
+			opacity: 1;	
+		}		
+	}
 </style>

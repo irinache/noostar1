@@ -31,7 +31,7 @@
 	    			<div class="col-md-2 text-left float-left footer-text valigh">
 		    			&copy; 2017  
 		    		</div>
-		    		<div class="col-md-10 float-right">
+		    		<div class="col-md-10 float-right social_media">
 			    		<div class="social_media_icon vk float-right"></div>
 			    		<div class="social_media_icon fb float-right"></div>
 			    		<div class="social_media_icon tw float-right"></div>
@@ -47,6 +47,10 @@
 	
 </script>
 <style>
+.social_media{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
 	.valigh{
 		margin-top: auto;
 		margin-bottom: auto;
