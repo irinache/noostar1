@@ -135,7 +135,7 @@ export default {
 			}
 		},		
 		handleResize: function(event){
-			console.log("resize");
+			//console.log("resize");
 
 			let slides = document.querySelectorAll('.teacher-card');
 

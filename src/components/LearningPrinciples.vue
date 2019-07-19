@@ -1,13 +1,13 @@
 <template>
-	<div class="container">
+	<div class="container learning-principles">
 		<div class="row">
-			<div v-for="p in principles" class="col-md-4 block border_right">
-				<div class="pict mx-auto d-block" :class="p.img">					
+			<div v-for="p in principles" class="col-md-4 learning-principles__block learning-principles__border-right">
+				<div class="learning-principles__icon mx-auto d-block" :class="p.img">					
 				</div>
-				<p class="th3">
+				<h3>
 					{{p.heading}}
-				</p>				
-				<p class="simple_text">
+				</h3>				
+				<p class="learning-principles__text">
 					{{p.text}}
 				</p>
 			</div>
@@ -44,43 +44,52 @@
 </script>
 
 <style lang="less">
-	.block{
-		padding: 20px;	
-		margin-top: 50px;
-		margin-bottom: 50px;
-	}
-	.border_right{
-		border-right: 1px solid #c9c9c9;
-	}
-	.border_right:last-child{
-		border-right: 0px;
-	}
-	.pict{
-		width: 109px;
-		height: 109px;
-		margin: 30px;
-	}
+	.learning-principles{
+		&__block{
+			padding: 20px;	
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		&__border-right{
+			border-right: 1px solid #c9c9c9;
+		}
+		&__border-right:last-child{
+			border-right: 0px;
+		}
+		&__icon{
+			width: 109px;
+			height: 109px;
+			margin: 30px;
+		}
+		&__text{
+			font-family: Muller Light;
+			color: #9a9c9f;
+		}
+	}	
+	
 	.book{
 		background: url('../assets/images/book.png') center no-repeat;
 	}
+
 	.lamp{
 		background: url('../assets/images/lamp.png') center no-repeat;
 	}
+
 	.hat{
 		background: url('../assets/images/hat.png') center no-repeat;
 	}
-	.th3{
+
+	h3{
 		font-family: Muller Medium;
 		font-size: 18px;
 		margin-bottom: 20px;
 	}
-	.simple_text{
-		font-family: Muller Light;
-		color: #9a9c9f;
-	}
+
 	@media (max-width: 767px) {
-		.border_right{
-			border-right: 0px;
-		}
-}
+		.learning-principles{
+			&__border-right{
+				border-right: 0;
+			}
+		}	
+	}
 </style>
