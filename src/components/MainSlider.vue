@@ -145,11 +145,8 @@
 </script>
 
 <style lang="less">	
-	@mainOrange: #ff5215;
-	@mainOrange_hover: #ff6934;
-	@mainBlue: #0a063c;
-	@text: #5a5a5a;
-	@border: #e8e8e8;
+	
+	@import '../assets/styles/index.less';
 
 	.main-slider{
 		&__wrapper{
@@ -196,7 +193,7 @@
 		&__text{
 			margin: 180px 0 0 200px;
 			z-index: 10;
-			color: white;
+			color: @lightText;
 			text-align: left;			
 		}
 		&__welcome-text{
@@ -214,22 +211,6 @@
 		font-weight: bold;
 		font-size: 44px;
 		animation: h1_appering 2s;
-	}
-	
-	.orange_btn{
-		background-color: @mainOrange;
-		color: white;
-		font-family: Muller;
-		font-weight: bold;
-		font-size: 12px;
-		border-radius: 5px;
-		text-transform: uppercase;
-		padding: 12px 25px 10px 25px;		
-	}
-	.orange_btn:hover{
-		background-color: @mainOrange_hover;
-		color: white;
-		text-decoration: none;
 	}
 
 	.btn-animation{

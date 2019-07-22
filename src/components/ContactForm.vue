@@ -58,6 +58,9 @@
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+	
 	.contact-us{
 		&__form-group{
 			margin-bottom: 16px;
@@ -68,7 +71,7 @@
 		}
 		&__input{
 			width: 100%;
-			border: 1px solid #c9c9c9; 
+			border: 1px solid @border; 
 			border-radius: 3px;
 			font-family: Muller;
 			font-size: 14px;
@@ -95,6 +98,6 @@
 		font-family: Muller;
 		font-size: 12px;
 		margin-bottom: 5px;
-		color: #848383;
+		color: @text;
 	}
 </style>

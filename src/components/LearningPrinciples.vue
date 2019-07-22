@@ -44,6 +44,9 @@
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+
 	.learning-principles{
 		&__block{
 			padding: 20px;	
@@ -51,7 +54,7 @@
 			margin-bottom: 50px;
 		}
 		&__border{
-			border-right: 1px solid #c9c9c9;
+			border-right: 1px solid @border;
 		}
 		&__border:last-child{
 			border-right: 0px;
@@ -63,7 +66,7 @@
 		}
 		&__text{
 			font-family: Muller Light;
-			color: #9a9c9f;
+			color: @text;
 		}
 	}	
 	

@@ -50,12 +50,7 @@
 
 <style lang="less">
 
-@mainOrange: #ff5215;
-@mainOrange_hover: #ff6934;
-@mainBlue: #0a063c;
-@text: #5a5a5a;
-@border: #e8e8e8;
-
+@import '../assets/styles/index.less';
 
 .c-header {
     &__top {
@@ -65,7 +60,7 @@
         font-family: Lato;
         font-weight: 600;
         font-size: 15px;
-        color: white;
+        color: @lightText;
         text-align: left;
     }
     &__contact {
@@ -90,7 +85,7 @@
         color:@text;
         font-family: Muller;
         font-size: 13px;   
-        background-color: white;
+        background-color: @lightBackground;
     }
 
 }
@@ -158,16 +153,14 @@
 }
 @media (max-width: 482px) {
     .c-header {
-        &__contact { 
-           
+        &__contact {            
             text-align: center;             
             margin-right: 0px;
             width: 90vw;
         }
         &__btn-position{
-        width: 50%;
-    }
-
+            width: 100%;
+        }
     }
     
     .btn_container{
@@ -177,7 +170,6 @@
     .logo{
         width: 100%;
         text-align: center;
-        padding: 20;
         margin-right: auto;
         margin-left: auto;
     }

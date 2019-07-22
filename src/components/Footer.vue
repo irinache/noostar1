@@ -45,12 +45,8 @@
 	
 </script>
 <style lang="less">
-	@mainOrange: #ff5215;
-	@mainOrange_hover: #ff6934;
-	@mainBlue: #0a063c;
-	@text: #5a5a5a;
-	@border: #e8e8e8;
-
+	
+	@import '../assets/styles/index.less';
 
 	.footer {
 	    &__top {
@@ -60,7 +56,7 @@
 	        font-family: Lato;
 	        font-weight: 600;
 	        font-size: 15px;
-	        color: white;
+	        color: @lightText;
 	        text-align: left;
 	    }
 	    &__contact {
@@ -85,7 +81,7 @@
 			margin-left: 17px;
 		}
 		&__text{
-			color: #80909c;
+			color: @text;
 			font-family: Muller;
 		}
 		&__text-valign{
@@ -93,7 +89,7 @@
 			margin-bottom: auto;
 		}
 		&__brdr-btm{
-			border-bottom: 1px solid #464c55;
+			border-bottom: 1px solid @footerSeparator;
 		}
 		&__logo{
 		    margin-top: 20px;

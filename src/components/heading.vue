@@ -9,16 +9,16 @@
 		props:{
 			text: String,
 			color: String
-		},
-		mounted(){
-			document.querySelector(".heading")
 		}
 	}
 </script>
 
-<style>
+<style lang="less">
+
+	@import '../assets/styles/index.less';
+
 	.heading h2{
-		color: #393838;
+		color: @heading;
 		font-family: Muller;
 		font-weight: bold;
 		text-align: center;
@@ -33,7 +33,7 @@
 	    content: " ";
 	    width: 363px;
 	    height: 1px;
-	    background-color: #c9c9c9;    
+	    background-color: @border;    
 	    z-index: 2;
 	 	position: absolute;
 	 	bottom: 0;
@@ -44,7 +44,7 @@
 		width: 50px;
 	 	text-align: center;
 	 	transform: translateX(-50%);
-		background-color: #f6f6fa;
+		background-color: @darkerBackground;
 		position: absolute;
  		bottom: -20px; 
  		z-index: 3;
@@ -54,7 +54,7 @@
 		width: 50px;
 	 	text-align: center;
 	 	transform: translateX(-50%);
-		background-color: white;
+		background-color: @lightBackground;
 		position: absolute;
  		bottom: -20px; 
  		z-index: 3;

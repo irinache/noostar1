@@ -53,10 +53,7 @@
 
 <style lang="less">
 
-@mainOrange: #ff5215;
-@mainBlue: #0a063c;
-@text: #5a5a5a;
-@border: #e8e8e8;
+@import '../assets/styles/index.less';
 
 .caption {
 	position: absolute;

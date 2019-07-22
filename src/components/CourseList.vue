@@ -1,7 +1,7 @@
 <template>
 	<div class="container-fluid grey_bg course-list">
 		<div class="row">
-			<Heading text = "Список курсов" color="grey" />			
+			<Heading text = "Список курсов" color="grey"/>			
 		</div>
 		<div id="course-list__left" class="course-list__arr course-list__left" v-on:click = "left">
 				
@@ -168,6 +168,9 @@ export default {
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+
 	.grey_bg{
 		background-color: #f6f6fa;
 	}	

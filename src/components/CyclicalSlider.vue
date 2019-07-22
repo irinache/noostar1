@@ -209,6 +209,9 @@
 </script>
 
 <style>	
+	
+	@import '../assets/styles/index.less';
+
 	#slide{
 		width: 100%;
 		height: 620px;		

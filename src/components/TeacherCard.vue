@@ -32,14 +32,17 @@
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+
 	.teacher-card{
 		height: 455px;
 		width: 310px;
 		margin: 15px;
-		border: 1px solid #d2d1d1;
+		border: 1px solid @cardBorder;
 		border-radius: 3px;
 		display: inline-block;
-		background-color: white;
+		background-color: @lightBackground;
 		& > p{
 			margin: 0;
 			padding: 0;
@@ -52,20 +55,20 @@
 		}
 		&__name{
 			font-family: Muller Medium;
-			color: #555555;
+			color: @heading;
 			font-size: 18px;
 			margin-top: 30px;
 		}
 		&__specialty{
 			font-family: Muller UltraLight;
-			color: #848383;
+			color: @text;
 			font-size: 11px;
 			margin-top: 14px;
 			text-transform: uppercase;
 		}
 		&__text{
 			font-family: Muller Light;
-			color: #848383;
+			color: @text;
 			font-size: 12px;
 			margin-top: 24px;
 			width: 70%;
@@ -73,15 +76,15 @@
 		}
 		&__viber{		
 			background: url("../assets/images/viber.png")  no-repeat center center / 70%;
-			background-color: #e9e9f2;
+			background-color: @smBackground;
 		}
 		&__telegram{
 			background: url("../assets/images/telegram.png")  no-repeat center center / 70%;
-			background-color: #e9e9f2;
+			background-color: @smBackground;
 		}
 		&__skype{
 			background: url("../assets/images/skype.png")  no-repeat center center / 70%;
-			background-color: #e9e9f2;
+			background-color: @smBackground;
 		}
 		&__sn-btn{
 			height: 30px;
@@ -90,7 +93,7 @@
 			display: inline-block;
 		}
 		&__sn-btn:hover{
-			background-color: #e1e1ee;
+			background-color: @smBackground_hover;
 		}
 	}	
 	

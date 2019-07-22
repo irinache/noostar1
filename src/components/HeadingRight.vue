@@ -16,6 +16,9 @@
 </script>
 
 <style>
+
+	@import '../assets/styles/index.less';
+
 	.heading-left h2{
 		color: #393838;
 		font-family: Muller;

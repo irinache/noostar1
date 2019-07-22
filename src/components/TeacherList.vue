@@ -12,7 +12,7 @@
 				<TeacherCard v-for="teacher in teachers"
 				v-bind:key="teacher.name"
 				v-bind:name="teacher.name"
-				v-bind:speciality="teacher.speciality" 
+				v-bind:specialty="teacher.specialty" 
 				v-bind:info="teacher.info"
 				/>		
 			</div>	
@@ -43,30 +43,30 @@
 			teachers: [
 				{ 
 					name: 'Иван Иванов 1',
-					speciality: 'ТЕСТИРОВЩИК ПО',
+					specialty: 'ТЕСТИРОВЩИК ПО',
 					info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 				},
 				{
 					name: 'Иван Иванов 2',
-					speciality: 'ТЕСТИРОВЩИК ПО',
+					specialty: 'ТЕСТИРОВЩИК ПО',
 					info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
  
 				},
 				{
 					name: 'Иван Иванов 3',
-					speciality: 'ТЕСТИРОВЩИК ПО',
+					specialty: 'ТЕСТИРОВЩИК ПО',
 					info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
  
 				},
 				{
 					name: 'Иван Иванов 4',
-					speciality: 'ТЕСТИРОВЩИК ПО',
+					specialty: 'ТЕСТИРОВЩИК ПО',
 					info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
  
 				},
 				{
 					name: 'Иван Иванов 5',
-					speciality: 'ТЕСТИРОВЩИК ПО',
+					specialty: 'ТЕСТИРОВЩИК ПО',
 					info: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit',
 				}
 			]
@@ -160,6 +160,9 @@
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+
 	.teacher-list{
 		padding-bottom: 90px;		
 		&__arr{
@@ -195,9 +198,7 @@
 	 		top: 0;
 	 		left: 0;
 		}
-	}
-
-	
+	}	
 
 	@media (max-width: 1162px) {
 		.teacher-list{

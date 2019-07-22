@@ -71,6 +71,9 @@
 </script>
 
 <style lang="less">
+
+	@import '../assets/styles/index.less';
+	
 	p{
 		margin: 0;
 		padding: 0;
@@ -79,21 +82,21 @@
 		height: 455px;
 		width: 310px;
 		margin: 15px;
-		border: 1px solid #d2d1d1;
+		border: 1px solid @cardBorder;
 		border-radius: 3px;
 		display: inline-block;
-		background-color: white;
+		background-color: @lightBackground;
 		&__head-text{
 			margin: 0 auto;
 			margin-top: 20px;
 		}	
 		&__head{
-			background-color: #0a063c;
+			background-color: @mainBlue;
 			border-radius: 3px;
 			font-family: Muller;
 			font-size: 10px;
 			text-align: center;
-			color: white;
+			color: @lightText;
 			height: 58px;
 			overflow: auto;
 		}
@@ -101,7 +104,7 @@
 			font-family: Muller;
 			font-weight: bold;
 			font-size: 10px;
-			color: white;
+			color: @lightText;
 			margin-right: 5px;
 		}
 		&__image{
@@ -113,7 +116,7 @@
 		&__course-name{
 			font-family: Muller;
 			font-weight: bold;
-			color: #ff5215;
+			color: @mainOrange;
 			text-transform: uppercase;
 			font-size: 12px;
 			text-align: left;		
@@ -121,28 +124,19 @@
 			margin-bottom: 13px;
 			height: 35px;
 		}
-		&__info-title{
-			margin-left: 23px;
-			margin-top: 10px;
-			margin-bottom: 3px;
-			font-family: Muller;		
-			font-size: 10px;
-			color: #c7c7c7;
-			text-align: left;
-		}
 		&__duration{
 			float: left;
 			width: 50%;
-			border-top: 1px solid #d2d1d1;
-			border-bottom:  1px solid #d2d1d1;
+			border-top: 1px solid @cardBorder;
+			border-bottom:  1px solid @cardBorder;
 			
 		}
 		&__price{
 			float: right;
 			width: 50%;
-			border-left: 1px solid #d2d1d1;
-			border-top: 1px solid #d2d1d1;
-			border-bottom:  1px solid #d2d1d1;
+			border-left: 1px solid @cardBorder;
+			border-top: 1px solid @cardBorder;
+			border-bottom:  1px solid @cardBorder;
 			
 		}
 		&__info-title{
@@ -151,7 +145,7 @@
 			margin-bottom: 3px;
 			font-family: Muller;		
 			font-size: 10px;
-			color: #c7c7c7;
+			color: @infoTitle;
 			text-align: left;
 		}
 		&__info-text{
@@ -159,17 +153,17 @@
 			margin-bottom: 10px;
 			font-family: Muller;		
 			font-size: 10px;
-			color: #676767;
+			color: @darkText;
 			text-align: left;
 		}
 		&__teacher{
-			border-bottom:  1px solid #d2d1d1;
+			border-bottom:  1px solid @cardBorder;
 		}
 		&__info-btn{
 			margin-top: 25px;
 			text-align: center;
 			margin-bottom: 10px;
-			color: white;
+			color: @lightText;
 		}
 	}	
 	
