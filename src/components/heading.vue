@@ -59,9 +59,17 @@
  		bottom: -20px; 
  		z-index: 3;
 	}
-	@media (max-width: 578px) {
-    .heading:before {	   
-	    width: 200px;	   
+	@media (max-width: 768px) {
+	    .heading h2{
+			font-size: 28px;
+		}
+		.heading:before {	   
+		    width: 300px;	   
+		}
 	}
-}
+	@media (max-width: 578px) {
+	    .heading:before {	   
+		    width: 200px;	   
+		}
+	}
 </style>
