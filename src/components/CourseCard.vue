@@ -1,53 +1,53 @@
 <template>
 	<div class="course-card" id="course-card">
-		<div class="head">
-			<div class="head-text">
+		<div class="course-card__head">
+			<div class="course-card__head-text">
 				Начало обучения:
-				<span class="date">
+				<span class="course-card__date">
 				{{date}}
 				</span>
-
-				<OrangeButton text = "Идет набор"/>
+				<a class="orange_btn course-card__btn-pos">Идет набор</a>			
 			</div>			
 		</div>
-		<div class="course-image">			
+		<div class="course-card__image">			
 		</div>		
-		<div class="course-info">
-			<p class="info-title">
+		<div class="course-card__course-info">
+			<p class="course-card__info-title">
 				Курс:
 			</p>
-			<div class="course-name">
+			<div class="course-card__course-name">
 				{{course_name}}
 			</div>
 			<div class="clearfix">
-				<div class="duration">
-					<p class="info-title">
+				<div class="course-card__duration">
+					<p class="course-card__info-title">
 						Длительность:
 					</p>
-					<p class="info-text">
+					<p class="course-card__info-text">
 						{{duration}}
 					</p>
 				</div>
-				<div class="price">
-					<p class="info-title">
+				<div class="course-card__price">
+					<p class="course-card__info-title">
 						Цена обучения:
 					</p>
-					<p class="info-text">
+					<p class="course-card__info-text">
 						{{price}}
 					</p>
 				</div>
 			</div>
 			
-			<div class="teacher">
-				<p class="info-title">
+			<div class="course-card__teacher">
+				<p class="course-card__info-title">
 					Преподаватель:
 				</p>
-				<p class="info-text">
+				<p class="course-card__info-text">
 					{{teacher}}
 				</p>
 			</div>
-			<div class="info-btn">
-				<OrangeButton text = "Записаться на курс"/>
+			<div class="course-card__info-btn">
+				<a class="orange_btn course-card__btn-pos">Записаться на курс</a>
+				
 			</div>
 			
 		</div>
@@ -55,13 +55,8 @@
 </template>
 
 <script>
-	import OrangeButton from './OrangeButton.vue'
 	export default {
-		components:{
-			OrangeButton
-		},
-		props:{
-			last: String,
+		props:{			
 			date: String,
 			course_name: String,
 			duration: String,
@@ -69,20 +64,13 @@
 			teacher: String
 		},
 		data(){
-			return{
-				
+			return{				
 			}
-		},
-		mounted(){
-			//console.log(this.last);
-			if (this.last == 'true'){
-				document.querySelector(".course-card").style.margin = 0;
-			}
-		}
+		}		
 	}
 </script>
 
-<style>
+<style lang="less">
 	p{
 		margin: 0;
 		padding: 0;
@@ -94,100 +82,126 @@
 		border: 1px solid #d2d1d1;
 		border-radius: 3px;
 		display: inline-block;
-		background-color: white;	
-	}
-	.head{
-		background-color: #0a063c;
-		border-radius: 3px;
-		font-family: Muller;
-		font-size: 10px;
-		text-align: center;
-		color: white;
-		height: 58px;
-		overflow: auto;
-
-	}
-	.head-text{
-		margin: 0 auto;
-		margin-top: 20px;
-	}
-	.date{
-		font-family: Muller;
-		font-weight: bold;
-		font-size: 10px;
-		color: white;
-		margin-right: 5px;		
-	}
-	.course-image{
-		width: 100%;
-		height: 145px;
-		background: url("../assets/images/course_img.jpg");
-		margin-top: -3px;
-	}
-	.course-name{
-		font-family: Muller;
-		font-weight: bold;
-		color: #ff5215;
-		text-transform: uppercase;
-		font-size: 12px;
-		text-align: left;
-		height: 30px;
-		margin-left: 23px;		 
-		margin-bottom: 13px;
-	}
-	.duration{
-		float: left;
-		width: 50%;
-		border-top: 1px solid #d2d1d1;
-		border-bottom:  1px solid #d2d1d1;
-		
-	}
-	.price{
-		float: right;
-		width: 50%;
-		border-left: 1px solid #d2d1d1;
-		border-top: 1px solid #d2d1d1;
-		border-bottom:  1px solid #d2d1d1;
-		
-	}
-	.info-title{
-		margin-left: 23px;
-		margin-top: 10px;
-		margin-bottom: 3px;
-		font-family: Muller;		
-		font-size: 10px;
-		color: #c7c7c7;
-		text-align: left;
-	}
-	.info-text{
-		margin-left: 23px;
-		margin-bottom: 10px;
-		font-family: Muller;		
-		font-size: 10px;
-		color: #676767;
-		text-align: left;
-
-	}
-	.teacher{
-		border-bottom:  1px solid #d2d1d1;
-	}
+		background-color: white;
+		&__head-text{
+			margin: 0 auto;
+			margin-top: 20px;
+		}	
+		&__head{
+			background-color: #0a063c;
+			border-radius: 3px;
+			font-family: Muller;
+			font-size: 10px;
+			text-align: center;
+			color: white;
+			height: 58px;
+			overflow: auto;
+		}
+		&__date{
+			font-family: Muller;
+			font-weight: bold;
+			font-size: 10px;
+			color: white;
+			margin-right: 5px;
+		}
+		&__image{
+			width: 100%;
+			height: 145px;
+			background: url("../assets/images/course_img.jpg");
+			margin-top: -3px;
+		}
+		&__course-name{
+			font-family: Muller;
+			font-weight: bold;
+			color: #ff5215;
+			text-transform: uppercase;
+			font-size: 12px;
+			text-align: left;		
+			margin-left: 23px;		 
+			margin-bottom: 13px;
+			height: 35px;
+		}
+		&__info-title{
+			margin-left: 23px;
+			margin-top: 10px;
+			margin-bottom: 3px;
+			font-family: Muller;		
+			font-size: 10px;
+			color: #c7c7c7;
+			text-align: left;
+		}
+		&__duration{
+			float: left;
+			width: 50%;
+			border-top: 1px solid #d2d1d1;
+			border-bottom:  1px solid #d2d1d1;
+			
+		}
+		&__price{
+			float: right;
+			width: 50%;
+			border-left: 1px solid #d2d1d1;
+			border-top: 1px solid #d2d1d1;
+			border-bottom:  1px solid #d2d1d1;
+			
+		}
+		&__info-title{
+			margin-left: 23px;
+			margin-top: 10px;
+			margin-bottom: 3px;
+			font-family: Muller;		
+			font-size: 10px;
+			color: #c7c7c7;
+			text-align: left;
+		}
+		&__info-text{
+			margin-left: 23px;
+			margin-bottom: 10px;
+			font-family: Muller;		
+			font-size: 10px;
+			color: #676767;
+			text-align: left;
+		}
+		&__teacher{
+			border-bottom:  1px solid #d2d1d1;
+		}
+		&__info-btn{
+			margin-top: 25px;
+			text-align: center;
+			margin-bottom: 10px;
+			color: white;
+		}
+	}	
+	
 	.clearfix:after{
 		content: ""; 
 		display: table; 
 		clear: both; 
 	}
-	.info-btn{
-		margin-top: 25px;
-		text-align: center;
-	}
+	
 
 	@media (max-width: 482px) {   
 		.course-card{
 			width: 250px;
-			height: 500px;
-		}
-		.head{
-			height: 100px;
-		}
+			height: 530px;
+			&__btn-pos{
+				width: 80%;
+				display: block;
+				margin: 10px auto 0 auto;
+			}
+			&__head{
+				height: 100px;
+			}
+		}		
+	}
+	@media (max-width: 340px) {   
+		.course-card{
+			width: 220px;
+			height: 550px;
+			&__course-name{
+				height: 50px;
+			}
+		}	
+					
 	}
 </style>
