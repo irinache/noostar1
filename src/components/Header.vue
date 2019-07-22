@@ -32,9 +32,9 @@
                     </div>
                 </div>  
                 <div class="col-md-auto btn_container">
-                    <div class="orange_btn c-header__btn-position ">
+                    <a class="orange_btn c-header__btn-position ">
                         Учиться
-                    </div>
+                    </a>
                 </div>  
             </div>
         </div>
@@ -164,8 +164,10 @@
     }
     
     .btn_container{
-        width: 100%;        
-        margin-bottom: 30px;    
+        width: 100%;  
+        margin-left: auto;
+        margin-right: auto;      
+        margin-bottom: 10px;    
     }
     .logo{
         width: 100%;
