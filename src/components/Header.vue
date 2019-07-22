@@ -51,6 +51,7 @@
 <style lang="less">
 
 @mainOrange: #ff5215;
+@mainOrange_hover: #ff6934;
 @mainBlue: #0a063c;
 @text: #5a5a5a;
 @border: #e8e8e8;
@@ -163,8 +164,12 @@
             margin-right: 0px;
             width: 90vw;
         }
+        &__btn-position{
+        width: 50%;
+    }
 
-    }  
+    }
+    
     .btn_container{
         width: 100%;        
         margin-bottom: 30px;    

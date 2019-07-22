@@ -1,7 +1,7 @@
 <template>
 	<div class="container learning-principles">
 		<div class="row">
-			<div v-for="p in principles" class="col-md-4 learning-principles__block learning-principles__border-right">
+			<div v-for="p in principles" class="col-md-4 learning-principles__block learning-principles__border">
 				<div class="learning-principles__icon mx-auto d-block" :class="p.img">					
 				</div>
 				<h3>
@@ -50,10 +50,10 @@
 			margin-top: 50px;
 			margin-bottom: 50px;
 		}
-		&__border-right{
+		&__border{
 			border-right: 1px solid #c9c9c9;
 		}
-		&__border-right:last-child{
+		&__border:last-child{
 			border-right: 0px;
 		}
 		&__icon{
@@ -87,9 +87,9 @@
 
 	@media (max-width: 767px) {
 		.learning-principles{
-			&__border-right{
-				border-right: 0;
-			}
+			&__border{
+				border-right: 0;				
+			}			
 		}	
 	}
 </style>

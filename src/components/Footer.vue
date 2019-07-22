@@ -46,7 +46,7 @@
 <script>
 	
 </script>
-<style>
+<style lang="less">
 .social_media{
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -80,5 +80,8 @@
 	}
 	.in{
 		background: url(../assets/images/linkedin.png) no-repeat center center/cover;
+	}
+	@media (max-width: 770px) {
+
 	}
 </style>

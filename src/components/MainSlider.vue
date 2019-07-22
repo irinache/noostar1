@@ -79,12 +79,12 @@
 			switchArrowState: function(id, arr){
 				let elem = document.getElementById(id);
 				if (arr === true){
-					elem.classList.add("unactive");
-					elem.classList.remove("active");					
+					elem.classList.add("arr-unactive");
+					elem.classList.remove("arr-active");					
 				}
 				else if (arr == false){
-					elem.classList.add("active");
-					elem.classList.remove("unactive");
+					elem.classList.add("arr-active");
+					elem.classList.remove("arr-unactive");
 				}
 			},
 			right: function(){
@@ -122,12 +122,12 @@
 				this.cards.style.width = slides.length*this.offset + 'px';		
 				this.cards.style.left = 0;				
 				
-				document.getElementById('main-slider__left').classList.remove("active");
-				document.getElementById('main-slider__left').classList.add("unactive");
+				document.getElementById('main-slider__left').classList.remove("arr-active");
+				document.getElementById('main-slider__left').classList.add("arr-unactive");
 				this.l_arr = false;	
 					
-				document.getElementById('main-slider__right').classList.remove("unactive");
-				document.getElementById('main-slider__right').classList.add("active");
+				document.getElementById('main-slider__right').classList.remove("arr-unactive");
+				document.getElementById('main-slider__right').classList.add("arr-active");
 				this.r_arr = true;
 			},
 			handleResize: function(event){				
@@ -145,6 +145,12 @@
 </script>
 
 <style lang="less">	
+	@mainOrange: #ff5215;
+	@mainOrange_hover: #ff6934;
+	@mainBlue: #0a063c;
+	@text: #5a5a5a;
+	@border: #e8e8e8;
+
 	.main-slider{
 		&__wrapper{
 			font-size: 0; 
@@ -211,7 +217,7 @@
 	}
 	
 	.orange_btn{
-		background-color: #ff5215;
+		background-color: @mainOrange;
 		color: white;
 		font-family: Muller;
 		font-weight: bold;
@@ -220,15 +226,14 @@
 		text-transform: uppercase;
 		padding: 12px 25px 10px 25px;		
 	}
+	.orange_btn:hover{
+		background-color: @mainOrange_hover;
+		color: white;
+		text-decoration: none;
+	}
 
 	.btn-animation{
 		animation: btn_appering 2s;
-	}
-
-	a:hover{
-		background-color: #ff652f;
-		color: white;
-		text-decoration: none;
 	}	
 
 	@media (max-width: 1000px) {  
@@ -287,6 +292,13 @@
 		    }
 		}			
 	}
+	@media (max-width: 485px) {   
+		.main-slider{		    
+			&__text{				
+				margin-top: 100px;	
+			}
+		}
+	}
 
 	@media (max-width: 425px) {   
 		.main-slider{				
@@ -298,7 +310,7 @@
 			}
 			&__text{
 				width: 60%;
-				margin-top: 110px;	
+				margin-top: 100px;	
 			}
 		}		
 		h1{

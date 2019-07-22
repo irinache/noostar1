@@ -5,8 +5,7 @@
 <script>
 	export default{
 		props: {
-			text: String,
-		
+			text: String,		
 		},
 		mounted(){
 			
@@ -30,11 +29,5 @@
 		color: white;
 		text-decoration: none;
 	}
-	@media (max-width: 482px) {   
-		.orange_btn{
-			display: block;
-			width: 80%;
-			margin: 10px auto 0 auto;
-		}
-	}
+
 </style>
