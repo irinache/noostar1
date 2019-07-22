@@ -38,4 +38,9 @@
 	    display: block;
 
 	}
+	@media (max-width: 768px) {
+	    .heading-left h2{
+			font-size: 28px;
+		}		
+	}
 </style>

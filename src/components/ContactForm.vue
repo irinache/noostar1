@@ -1,31 +1,31 @@
 <template>
-	<div class="grey_bg">	
+	<div class="grey_bg contact-us">	
 		<div class="container justify-content-center">
 			<div class="row col-md-12 m-0">
 				<HeadingRight text="Есть вопросы? Напишите нам"/>		
 			</div>
-			<form>
+			<form @submit = "submit">
 				<div class="row m-0">
 					<div class="col-md-6">
-						<div class="form__group">
-					        <label class="contact__label">Имя:</label>
-					        <input class="contact__input" v-model="name" type="text" id="name">
+						<div class="contact-us__form-group">
+					        <label class="contact-us__label">Имя:</label>
+					        <input class="contact-us__input" v-model="name" type="text" id="name">
 					    </div>
-					    <div class="form__group">
-					        <label class="contact__label">Телефон:</label>
-					        <input class="contact__input" v-model="phone" type="text" id="phone">
+					    <div class="contact-us__form-group">
+					        <label class="contact-us__label">Телефон:</label>
+					        <input class="contact-us__input" v-model="phone" type="text" id="phone">
 					    </div>
 					</div>
 					<div class="col-md-6">
-					    <div class="form__group">
-					        <label class="contact__label">Сообщение:</label>
-					        <textarea class="contact__input message" v-model="message" id="message"></textarea> 
+					    <div class="contact-us__form-group">
+					        <label class="contact-us__label">Сообщение:</label>
+					        <textarea class="contact-us__input contact-us__message" v-model="message" id="message"></textarea> 
 					    </div>
 					</div>	
 				</div>
 				<div class="row m-0">
 					<div class="col-md-12">
-						<input type="submit" value="Отправить заявку" class="orange_btn float-right contact__btn">	
+						<input type="submit" value="Отправить заявку" class="orange_btn float-right contact-us__btn-position">	
 					</div>					
 				</div>	    
 			    
@@ -37,12 +37,10 @@
 </template>
 
 <script>
-	import HeadingRight from './HeadingRight.vue'
-	import OrangeButton from './OrangeButton.vue'
+	import HeadingRight from './HeadingRight.vue'	
 	export default {
  		components: {
-	  		HeadingRight,
-	  		OrangeButton
+	  		HeadingRight
   		},
   		data: function(){
   			return {
@@ -50,40 +48,49 @@
   				phone: "",
   				message: ""
   			}
-  		}  		
+  		},
+  		methods: {
+  			submit(e) {	
+	  			//submit code
+		    }
+  		}		
   	}
 </script>
 
-<style>
+<style lang="less">
+	.contact-us{
+		&__form-group{
+			margin-bottom: 16px;
+		}
+		&__label{
+			display: block;
+			text-align: left;
+		}
+		&__input{
+			width: 100%;
+			border: 1px solid #c9c9c9; 
+			border-radius: 3px;
+			font-family: Muller;
+			font-size: 14px;
+			padding-left: 7px;
+		}
+		&__message{
+			height: 95px;
+		}
+		&__btn-position{
+			margin-top: 15px;
+			margin-bottom: 80px;
+		}
+	}
+
 	input{		
 		border: none;
 	}
-	textarea{
-		 resize: none; 
 
+	textarea{
+		 resize: none;
 	}
-	.contact__label{
-		display: block;
-		text-align: left;
-	}
-	.contact__input{
-		width: 100%;
-		border: 1px solid #c9c9c9; 
-		border-radius: 3px;
-		font-family: Muller;
-		font-style: 14px;
-		padding-left: 7px;
-	}
-	.form__group{
-		margin-bottom: 16px;
-	}
-	.message{
-		height: 95px;
-	}
-	.contact__btn{		
-		margin-top: 15px;
-		margin-bottom: 80px;
-	}
+
 	label{
 		font-family: Muller;
 		font-size: 12px;
